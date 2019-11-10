@@ -18,3 +18,11 @@
 .field.water {
     background-color: deepskyblue;
 }
+
+.field.pop-1 {
+    background-color: firebrick;
+}
+
+.field.pop-2 {
+    background-color: gold;
+}
