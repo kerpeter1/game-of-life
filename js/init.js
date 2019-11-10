@@ -1,16 +1,21 @@
 $(() => {
     settings();
     initMap();
+    addPopulations();
+    console.log(fields);
+
 })
 
 var fields;
 var mapHeight;
 var mapWidth;
+var countOfPopulations;
 
 function settings() {
     mapHeight = 50;
     mapWidth = 100;
     fieldSize = 10;
+    countOfPopulations = 2;
 }
 
 function initMap() {
@@ -31,5 +36,23 @@ function initMap() {
 
             $('#map').append($newField);
         }
+    }
+}
+
+function addPopulations() {
+
+    fields = [];
+
+    for (let row = 0; row < mapHeight; row++) {
+        let arr = [];
+        for (let column = 0; column < mapWidth; column++) {
+            let rnd = Math.floor(Math.random() * 5) + 1;
+            if (rnd > countOfPopulations) {
+                arr[column] = 0;
+            } else {
+                arr[column] = rnd;
+            }
+        }
+        fields[row] = arr;
     }
 }
