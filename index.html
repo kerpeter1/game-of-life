@@ -14,9 +14,22 @@
 </head>
 
 <body>
-    <div>
-        <button id="next-button">Next</button>
-    </div>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand h1" href="#">Game of life</a>
+        <div class="row">
+            <label for="example-number-input" class="col-8 col-form-label">Count of populations</label>
+            <div class="col-4">
+                <input class="form-control" type="number" value="1" min="1" max="5" id="example-number-input">
+            </div>
+        </div>
+        <div class="row">
+            <label for="example-number-input" class="col-8 col-form-label">Overpopulation limit</label>
+            <div class="col-4">
+                <input class="form-control" type="number" value="1" min="1" max="5" id="example-number-input">
+            </div>
+        </div>
+        <button class="btn btn-sm btn-outline-secondary" type="button">Start</button>
+    </nav>
     <div id='map'></div>
 </body>
 

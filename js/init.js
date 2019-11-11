@@ -3,7 +3,10 @@ $(() => {
     initMap();
     addPopulations();
     redrawMap();
-    addEventListeners();
+    /*setInterval(function () {
+        nextRound();
+        redrawMap();
+    }, 500)*/
 })
 
 var fields;
@@ -12,7 +15,7 @@ var mapWidth;
 var countOfPopulations;
 
 function settings() {
-    mapHeight = 50;
+    mapHeight = 75;
     mapWidth = 2 * mapHeight;
     fieldSize = 10;
     countOfPopulations = 2;
@@ -48,7 +51,7 @@ function addPopulations() {
     for (let row = 0; row < mapHeight; row++) {
         let arr = [];
         for (let column = 0; column < mapWidth; column++) {
-            let rnd = Math.floor(Math.random() * 5) + 1;
+            let rnd = Math.floor(Math.random() * (countOfPopulations + 5)) + 1;
             if (rnd > countOfPopulations ||
                 row === 0 || row === mapHeight - 1 || column === 0 ||
                 column === mapWidth - 1) {
@@ -59,10 +62,4 @@ function addPopulations() {
         }
         fields[row] = arr;
     }
-}
-
-function addEventListeners() {
-    $('#next-button').click(() => {
-        redrawMap();
-    })
 }
