@@ -76,9 +76,6 @@ function addEventListeners() {
         $('#new-button').removeClass('d-none');
         $('#start-button').addClass('d-none');
         $('#stop-button').removeClass('d-none');
-        settings();
-        addPopulations();
-        initMap();
         roundInterval = setInterval(function () {
             nextRound();
             redrawMap();
@@ -106,5 +103,9 @@ function addEventListeners() {
         $('#stop-button').addClass('d-none');
         $('#continue-button').addClass('d-none');
         clearInterval(roundInterval);
+        settings();
+        addPopulations();
+        initMap();
+        redrawMap();
     })
 }
