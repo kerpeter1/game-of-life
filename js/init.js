@@ -1,27 +1,32 @@
 $(() => {
     settings();
-    initMap();
-    addPopulations();
-    redrawMap();
-    /*setInterval(function () {
-        nextRound();
-        redrawMap();
-    }, 500)*/
+    addEventListeners();
 })
 
 var fields;
 var mapHeight;
 var mapWidth;
 var countOfPopulations;
+var overpopulationLimit;
 
 function settings() {
-    mapHeight = 75;
-    mapWidth = 2 * mapHeight;
+
+    mapHeight = 65;
+    mapWidth = 150;
     fieldSize = 10;
-    countOfPopulations = 2;
+
+    countOfPopulations = parseInt($('#population-count').val());
+    overpopulationLimit = parseInt($('#overpopulation-limit').val());
 }
 
+
+//overpopulation-limit
+//population-count
+
 function initMap() {
+
+    $('#map').children().remove();
+
     let width = mapWidth * fieldSize;
     $('#map').css('max-width', `${width}px`);
 
@@ -62,4 +67,44 @@ function addPopulations() {
         }
         fields[row] = arr;
     }
+}
+
+function addEventListeners() {
+    var roundInterval;
+
+    $('#start-button').click(function () {
+        $('#new-button').removeClass('d-none');
+        $('#start-button').addClass('d-none');
+        $('#stop-button').removeClass('d-none');
+        settings();
+        addPopulations();
+        initMap();
+        roundInterval = setInterval(function () {
+            nextRound();
+            redrawMap();
+        }, 500);
+    });
+
+    $('#continue-button').click(function () {
+        $('#continue-button').addClass('d-none');
+        $('#stop-button').removeClass('d-none');
+        roundInterval = setInterval(function () {
+            nextRound();
+            redrawMap();
+        }, 500);
+    });
+
+    $('#stop-button').click(function () {
+        $('#stop-button').addClass('d-none');
+        $('#continue-button').removeClass('d-none');
+        clearInterval(roundInterval);
+    })
+
+    $('#new-button').click(function () {
+        $('#new-button').addClass('d-none');
+        $('#start-button').removeClass('d-none');
+        $('#stop-button').addClass('d-none');
+        $('#continue-button').addClass('d-none');
+        clearInterval(roundInterval);
+    })
 }

@@ -74,7 +74,7 @@ function nextRound() {
 
                     //overpopulation
 
-                    if (countOfNeighbours > 3 && originalFields[selRow][selColumn] !== 0) {
+                    if (countOfNeighbours > overpopulationLimit && originalFields[selRow][selColumn] !== 0) {
                         return {
                             destiny: DESTINY_TYPE.DIE,
                             population: 0

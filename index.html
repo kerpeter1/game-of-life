@@ -19,18 +19,24 @@
         <div class="row">
             <label for="example-number-input" class="col-8 col-form-label">Count of populations</label>
             <div class="col-4">
-                <input class="form-control" type="number" value="1" min="1" max="5" id="example-number-input">
+                <input class="form-control" type="number" value="1" min="1" max="5" id="population-count">
             </div>
         </div>
         <div class="row">
-            <label for="example-number-input" class="col-8 col-form-label">Overpopulation limit</label>
+            <label for="overpopulation-limit" class="col-8 col-form-label">Overpopulation limit</label>
             <div class="col-4">
-                <input class="form-control" type="number" value="1" min="1" max="5" id="example-number-input">
+                <input class="form-control" type="number" value="3" min="1" max="8" id="overpopulation-limit">
             </div>
         </div>
-        <button class="btn btn-sm btn-outline-secondary" type="button">Start</button>
+        <button id="new-button" class="btn btn-sm btn-outline-secondary d-none" type="button">New</button>
+        <button id="start-button" class="btn btn-sm btn-outline-secondary" type="button">Start</button>
+        <button id="continue-button" class="btn btn-sm btn-outline-secondary d-none" type="button">Continue</button>
+        <button id="stop-button" class="btn btn-sm btn-outline-secondary d-none" type="button">Stop</button>
     </nav>
+
     <div id='map'></div>
+
+
 </body>
 
 </html>
