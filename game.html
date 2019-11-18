@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game of Life</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/simulation.js"></script>
+    <script src="js/init.js"></script>
+
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <nav class="navbar navbar-light flex column flex-md-row bd-navbar" style="background-color: #e3f2fd;">
+        <a class="navbar-brand h1" href="#">Game of life</a>
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <div class="row">
+                <label for="example-number-input" class="col-form-label">Count of populations</label>
+                <div class="col-4 mr-5">
+                    <input class="form-control" type="number" value="1" min="1" max="5" id="population-count">
+                </div>
+            </div>
+            <div class="row">
+                <label for="overpopulation-limit" class="col-form-label">Overpopulation limit</label>
+                <div class="col-4">
+                    <input class="form-control" type="number" value="3" min="1" max="8" id="overpopulation-limit">
+                </div>
+            </div>
+        </ul>
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <button id="new-button" class="btn btn-sm btn-primary  mr-2 pl-3 pr-3" type="button">New</button>
+            <button id="start-button" class="btn btn-sm btn-primary mr-2 pl-3 pr-3 d-none" type="button">Start</button>
+            <button id="continue-button" class="btn btn-sm btn-primary d-none mr-2 pl-3 pr-3"
+                type="button">Continue</button>
+            <button id="stop-button" class="btn btn-sm btn-primary d-none mr-2 pl-3 pr-3" type="button">Stop</button>
+        </ul>
+    </nav>
+
+    <div class="d-flex justify-content-center mt-3">
+        <div id='map'></div>
+    </div>
+
+
+</body>
+
+</html>
